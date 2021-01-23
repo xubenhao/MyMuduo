@@ -8,7 +8,7 @@
 // ２．默认无锁／同步
 // ３．锁定区＋已经处理区＋尚未处理区＋可操作区
 //
-class Buffer
+class Buffer : Copyable
 {
 public:
     static const size_t s_nCheapPrepend = 8;

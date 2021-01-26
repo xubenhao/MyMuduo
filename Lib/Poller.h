@@ -1,11 +1,11 @@
 #ifndef NLIB_POLLER_H
 #define NLIB_POLLER_H
-
+#include "header.h"
 #include "TimeStamp.h"
 #include "EventLoop.h"
 
 class Channel;
-class Poller
+class Poller : NonCopyable
 {
 public:
     typedef std::vector<Channel*> ChannelList;

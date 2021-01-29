@@ -47,7 +47,7 @@
 // 多线程下对共享资源的多生产者多消费者问题
 // 需要线程间互斥／同步机制．
 //
-class ThreadPool 
+class ThreadPool : NonCopyable 
 {
 public:
     typedef std::function<void ()> Task;

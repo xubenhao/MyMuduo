@@ -1,5 +1,5 @@
 #include "TcpClient.h"
-
+#include "Connector.h"
 void removeConnection(
     EventLoop* loop, 
     const TcpConnectionPtr& conn)

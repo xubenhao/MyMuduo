@@ -2,7 +2,7 @@
 #define NLIB_CONDITION_H
 
 #include "Mutex.h"
-class Condition : NonCopyable 
+class Condition  
 { 
 public:
     explicit Condition(

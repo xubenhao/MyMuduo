@@ -1,7 +1,7 @@
 #ifndef NLIB_CURRENTTHREAD_H
 #define NLIB_CURRENTTHREAD_H
 #include "header.h"
-
+#include "TimeStamp.h"
 // __thread修饰的全局对象
 // 每个线程有各自独立的一份，
 // 天然就是线程特定的数据

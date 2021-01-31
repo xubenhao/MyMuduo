@@ -2,6 +2,7 @@
 #define NLIB_TCPSERVER_H
 #include "../Lib/lib.h"
 #include "TcpConnection.h"
+#include "Acceptor.h"
 
 class Acceptor;
 class EventLoop;

@@ -7,7 +7,7 @@
 // 一个内部支持
 // 多线程间互斥／同步访问的对象类型
 // 内部处理的是一个计数
-class CountDownLatch : NonCopyable   
+class CountDownLatch  
 {
 public:
     explicit CountDownLatch(int count);

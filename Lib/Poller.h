@@ -5,7 +5,7 @@
 #include "EventLoop.h"
 
 class Channel;
-class Poller : NonCopyable
+class Poller 
 {
 public:
     typedef std::vector<Channel*> ChannelList;

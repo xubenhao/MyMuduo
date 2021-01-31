@@ -1,6 +1,7 @@
 #ifndef NLIB_POLLER_EPOLLPOLLER_H
 #define NLIB_POLLER_EPOLLPOLLER_H
-
+#include "header.h"
+#include <sys/epoll.h>
 #include "Poller.h"
 struct epoll_event;
 class EPollPoller : public Poller

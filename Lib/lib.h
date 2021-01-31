@@ -24,5 +24,6 @@
 #include "InetAddress.h"
 #include "Channel.h"
 #include "Buffer.h"
+#include "EventLoopThreadPool.h"
 #endif
 

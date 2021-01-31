@@ -10,7 +10,7 @@
 // １．继承
 // ２．组合
 class EventLoop;
-class EventLoopThread : NonCopyable
+class EventLoopThread 
 {
 public:
     typedef std::function<void(EventLoop*)> 

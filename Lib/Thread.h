@@ -13,7 +13,7 @@
 // 可以得到调用发生时需要的语境信息
 // 并可据此作对应的处理
 //
-class Thread : NonCopyable 
+class Thread  
 {
 public:
     typedef std::function<void ()> ThreadFunc;

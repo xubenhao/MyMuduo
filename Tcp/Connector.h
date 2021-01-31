@@ -1,6 +1,7 @@
 #ifndef NLIB_CONNECTOR_H
 #define NLIB_CONNECTOR_H
 #include "../Lib/lib.h"
+
 class Channel;
 class EventLoop;
 

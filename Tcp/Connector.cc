@@ -1,8 +1,4 @@
 #include "Connector.h"
-#include "Logging.h"
-#include "Channel.h"
-#include "EventLoop.h"
-#include "SocketOps.h"
 
 const int Connector::s_nMaxRetryDelayMs;
 Connector::Connector(

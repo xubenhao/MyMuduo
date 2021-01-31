@@ -1,7 +1,6 @@
 #ifndef NLIB_THREADLOCAL_H
 #define NLIB_THREADLOCAL_H
 #include "Mutex.h"
-#include "NonCopyable.h"
 
 // 一个模板类对象
 // 包含的m_nKey提供了所有线程共享的一个索引
@@ -9,7 +8,7 @@
 // 对每个T
 // 提供一个所有线程共享的全局ThreadLocal<T>对象即可
 template<typename T>
-class ThreadLocal : NonCopyable
+class ThreadLocal 
 {
 public:
     ThreadLocal()

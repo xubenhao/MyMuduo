@@ -16,9 +16,12 @@
 #include "ThreadLocal.h"
 #include "ThreadLocalSingleton.h"
 #include "ThreadPool.h"
-#include "Timestamp.h"
+#include "TimeStamp.h"
 #include "TimeZone.h"
-#include "Types.h"
 #include "WeakCallback.h"
+#include "Socket.h"
+#include "SocketOps.h"
+#include "InetAddress.h"
+#include "Channel.h"
 #endif
 

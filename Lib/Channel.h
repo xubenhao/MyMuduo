@@ -15,7 +15,7 @@ class EventLoop;
 
 // 描述符－－Channel－－EPoll
 //
-class Channel : NonCopyable  
+class Channel  
 {
 public: 
     typedef std::function<void()> EventCallback;  

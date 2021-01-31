@@ -4,7 +4,7 @@
 #include "CurrentThread.h"
    
 // 互斥锁，同时包含拥有此锁的线程id
-class MutexLock : NonCopyable
+class MutexLock 
 {
     class UnassignGuard 
     {

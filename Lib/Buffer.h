@@ -1,14 +1,15 @@
 #ifndef NLIB_BUFFER_H
 #define NLIB_BUFFER_H
-
+#include "header.h"
 #include "StringPiece.h"
 #include "Endian.h"
+#include "Logging.h"
 // Buffer的设计：
 // １．容量动态变化
 // ２．默认无锁／同步
 // ３．锁定区＋已经处理区＋尚未处理区＋可操作区
 //
-class Buffer : Copyable
+class Buffer 
 {
 public:
     static const size_t s_nCheapPrepend = 8;

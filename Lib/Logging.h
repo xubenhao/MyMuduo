@@ -6,23 +6,6 @@
 class TimeZone;
 class Logger
 {
-    class Impl
-    {
-    public:
-        typedef Logger::LogLevel LogLevel;
-        Impl(LogLevel level, 
-            int old_errno, 
-            const SourceFile& file, 
-            int line);
-        void formatTime();
-        void finish();
-        TimeStamp m_nTime;
-        LogStream m_nStream;
-        LogLevel m_nLevel;
-        int m_nLine;
-        SourceFile m_nBaseName;
-    };
-
 public:
     enum LogLevel
     {
@@ -74,6 +57,25 @@ public:
         int m_nSize;
     };
 
+    class Impl
+    {
+    public:
+        typedef Logger::LogLevel LogLevel;
+        Impl(LogLevel level, 
+            int old_errno, 
+            const SourceFile& file, 
+            int line);
+        void formatTime();
+        void finish();
+        TimeStamp m_nTime;
+        LogStream m_nStream;
+        LogLevel m_nLevel;
+        int m_nLine;
+        SourceFile m_nBaseName;
+    };
+
+public:
+    
     Logger(
         SourceFile file, 
         int line);

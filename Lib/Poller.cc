@@ -22,14 +22,14 @@ bool Poller::hasChannel(Channel* channel) const
 Poller* Poller::newDefaultPoller(
         EventLoop* loop)
 {
-  if (::getenv("MUDUO_USE_POLL"))
+  /*if (::getenv("MUDUO_USE_POLL"))
   {
       LOG_INFO
           << "PollPoller";
       return new PollPoller(loop);
 
   }
-  else
+  else*/
   {
     LOG_INFO
         << "EPollPoller";

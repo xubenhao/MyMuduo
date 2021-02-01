@@ -35,21 +35,22 @@ public:
     // 不可用new产生此模板类型对象
     ThreadLocalSingleton() = delete;
     ~ThreadLocalSingleton() = delete;
-    
-    // 每个线程执行此调用时
-    // 是否可以获得线程本地数据下的一个T对象？
-    // 是的
-    // 每个线程自己malloc一个T对象，
-    // 在线程自己的m_pValue指向自己malloc的对象
-    // m_pValue被存储在线程特定数据的槽m_nKey内
+   
+    // m_pValue每个线程共享一个静态值对象［指针］
+    // 每个线程初次执行到此时，分配一个模板T动态对象，
+    // 将m_pValue指向它
     //
-    // m_pValue每个线程全局有一个，互不干扰
-    // m_nDeleter进程内所有线程共享一个全局Deleter对象
+    // 进程内所有线程针对模板类型T共享唯一一个静态值对象m_nDelete
+    // 进程首次使用模板类型T时，触发一个全局唯一的m_nDelete的构造
     static T& instance()
     {
         if (!m_pValue)
         {
           m_pValue = new T();
+          // 再将线程特定数据设置通过所有线程共享的索引
+          // 设置到线程特定数据槽，
+          // 有点多余．
+          // 利用__thread修饰的线程特定数据自身可以实现此功能
           m_nDeleter.set(m_pValue);
         }
         

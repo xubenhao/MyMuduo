@@ -1,7 +1,7 @@
 xxx = Buffer.o Channel.o Condition.o CountDownLatch.o \
 	  CurrentThread.o Date.o EPollPoller.o EventLoop.o \
 	  EventLoopThread.o EventLoopThreadPool.o Exception.o \
-	  FileUtil.o InetAddress.o Logging.o Poller.o \
+	  FileUtil.o InetAddress.o Logging.o LogStream.o Poller.o \
 	  ProcessInfo.o Socket.o SocketOps.o Thread.o \
 	  ThreadPool.o Timer.o TimerQueue.o TimeStamp.o \
 	  TimeZone.o
@@ -48,6 +48,9 @@ InetAddress.o : InetAddress.cc
 
 Logging.o : Logging.cc
 	g++ -c Logging.cc
+
+LogStream.o : LogStream.cc
+	g++ -c LogStream.cc
 
 Poller.o : Poller.cc
 	g++ -c Poller.cc

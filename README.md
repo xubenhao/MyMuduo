@@ -1,6 +1,4 @@
-# MyMuduo
-１．对Muduo库进行代码整理
-
+# MyMuduo－对Muduo库进行代码整理
 ａ．删除命名空间保护让代码简洁易读
 
 ｂ．统一更改变量命名，
@@ -770,6 +768,7 @@ void fill_list(list_any& la)
 
 {
   la.push_back(10); 
+ 
   la.push_back(std::string("glemontree"));
 }
 
@@ -777,27 +776,47 @@ void fill_list(list_any& la)
 void show_list(list_any& la) 
 
 {
+  
   list_any::iterator it;
+  
   boost::any anyone;
+  
   for (it = la.begin; it!= la.end(); ++it) 
+  
   {
+  
     anyone = *it;
+    
     // C++中，
-    // typeid用于返回指针或引用所指对象的实际类型，
-    typeid是操作符，不是函数
+    
+    // typeid用于返回指针或引用所指对象的实际类型，typeid是操作符，不是函数
+    
     if (anyone.type() == typeid(int)) 
+    
     {
+      
       std::cout 
+      
       	<< boost::any_cast<int>(*it) 
-      	<< std::endl;
+      	
+	<< std::endl;
+    
     } 
+    
     else if (anyone.type() == typeid(std::string)) 
+    
     {
-      std::cout 
-      	<< boost::any_cast<std::string>(*it).c_str() 
-      	<< std::endl;
+    
+    	std::cout 
+      	
+	  << boost::any_cast<std::string>(*it).c_str() 
+      	
+  	  << std::endl;
+    
     }
+  
   }
+
 }
   
 
@@ -855,21 +874,33 @@ TFD_CLOEXEC
 （表示当程序执行exec函数时本fd将被系统自动关闭,表示不传递）
 
 struct timespec 
+
 {
+
 	time_t tv_sec;
+
 	long   tv_nsec;
+
 };
 
 struct itimerspec 
+
 {
+
 	struct timespec it_interval;
+
 	struct timespec it_value;
+
 };
 
 int timerfd_settime(
+	
 	int fd, 
+	
 	int flags, 
+	
 	const struct itimerspec *new_value, 
+	
 	struct itimerspec *old_value);
   
 
@@ -905,7 +936,9 @@ it_interval不为0则表示是周期性定时器。
 it_value和it_interval都为0表示停止定时器
 
 int timerfd_gettime(
+	
 	int fd, 
+	
 	struct itimerspec *curr_value);
   
 
@@ -923,6 +956,7 @@ curr_value.it_interval 定时器间隔时间
 
 
 uint64_t exp = 0;
+
 read(fd, &exp, sizeof(uint64_t)); 
 
 
